@@ -1,4 +1,14 @@
-;;;; Config setup
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;; .emacs - Jeff Griffin (jeffgriffin0@fastmail.com)
+;;;;
+;;;; My current setup on macOS (assumes packages are installed via Homebrew)
+;;;;
+;;;;  External Dependencies:
+;;;;  - JetBrains Mono Font
+;;;;  - pandoc (for Markdown/HTML conversion)
+;;;;  - SBCL
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 
 ;; don't dump custom-set-variables stuff into our .emacs file - store it separately
 (setq custom-file "~/.emacs.custom.el") ; note: you may need to touch this file if it does not exist
