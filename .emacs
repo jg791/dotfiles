@@ -3,10 +3,17 @@
 ;;;;
 ;;;; My current setup on macOS (assumes packages are installed via Homebrew)
 ;;;;
+;;;; Has special plugins to work with: Common Lisp, OCaml and Markdown
+;;;;
 ;;;;  External Dependencies:
 ;;;;  - JetBrains Mono Font
 ;;;;  - pandoc (for Markdown/HTML conversion)
 ;;;;  - SBCL
+;;;;  - You must run "touch ~/.emacs.custom.el" before first launching
+;;;;
+;;;;  Assuming all the above are taken care of, this config should work
+;;;;  the first time you open .emacs (you will be prompted to trust the custom
+;;;;  theme exactly once, just select 'y' on both prompts).
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 
