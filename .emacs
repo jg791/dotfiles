@@ -11,6 +11,14 @@
 ;; set our package sources to use MELPA's repo - https://melpa.org/
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 
+(package-initialize)
+(unless package-archive-contents
+  (package-refresh-contents))
+(unless (package-installed-p 'use-package)
+  (package-install 'use-package))
+(require 'use-package)
+(setq use-package-always-ensure t)
+
 ;; set up our mandatory packages
 (use-package monokai-pro-theme) ; custom theme
 (use-package highlight-indent-guides) ; minor mode for showing ident levels - see L53
