@@ -39,9 +39,8 @@
 (setq use-package-always-ensure t)
 
 ;; set up our mandatory packages
-(use-package monokai-pro-theme) ; custom theme
-(use-package highlight-indent-guides) ; minor mode for showing ident levels - see L53
-; add a Sublime/neovim/VS Code/etc. style sidebar for file navigation - see L70
+
+; add a Sublime/neovim/VS Code/etc. style sidebar for file navigation
 (use-package dired-sidebar
   :bind (("C-x C-n" . dired-sidebar-toggle-sidebar)) ; toggle sidebar with C-x C-n
   :ensure t
@@ -61,6 +60,9 @@
   ; macOS does not support the --dired option for ls, so disable it
   (when (string= system-type "darwin")       
     (setq dired-use-ls-dired nil)))
+
+(use-package monokai-pro-theme) ; custom theme
+(use-package highlight-indent-guides) ; minor mode for showing ident levels - see L99
 (use-package all-the-icons-dired) ; adds icon set for dired-sidebar
 (use-package dired-subtree) ; adds intuitive tree-like behavior for dired-sidebar
 (use-package slime) ; Superior Lisp Interaction Mode for Emacs (Common Lisp)
