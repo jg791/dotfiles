@@ -5,18 +5,27 @@
 (load custom-file)
 
 ;;;; Package setup
-
 (require 'package)
 
 ;; set our package sources to use MELPA's repo - https://melpa.org/
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 
+;; don't show package compilation warnings/errors in third party packages
+(setq native-comp-async-report-warnings-errors 'silent)
+
+;; initialize packages
 (package-initialize)
+
+;; refresh package archives
 (unless package-archive-contents
   (package-refresh-contents))
+
+;; make sure use-package is install, then require it
 (unless (package-installed-p 'use-package)
   (package-install 'use-package))
 (require 'use-package)
+
+;; check package installations at every startup
 (setq use-package-always-ensure t)
 
 ;; set up our mandatory packages
