@@ -69,7 +69,7 @@
     (setq dired-use-ls-dired nil)))
 
 (use-package monokai-pro-theme) ; custom theme
-(use-package highlight-indent-guides) ; minor mode for showing ident levels - see L99
+(use-package highlight-indent-guides) ; minor mode for showing ident levels - see L106
 (use-package all-the-icons-dired) ; adds icon set for dired-sidebar
 (use-package dired-subtree) ; adds intuitive tree-like behavior for dired-sidebar
 (use-package slime) ; Superior Lisp Interaction Mode for Emacs (Common Lisp)
