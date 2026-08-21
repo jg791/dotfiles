@@ -3,13 +3,18 @@
 ;;;;
 ;;;; My current setup on macOS (assumes packages are installed via Homebrew)
 ;;;;
-;;;; Has special plugins to work with: Common Lisp, OCaml and Markdown
+;;;; Has special plugins to work with:
+;;;;  - Common Lisp (via SLIME)
+;;;;  - OCaml
+;;;;  - Haskell
+;;;;  - Markdown
 ;;;;
 ;;;;  Prereqs:
 ;;;;  - $ brew install sbcl # Steel Bank Common Lisp
 ;;;;  - $ brew install pandoc # Pandoc (for Markdown/HTML conversion)
 ;;;;  - $ brew install ispell # for spell checking
 ;;;;  - $ touch ~/.emacs.custom.el
+;;;;  - Install the Glasgow Haskell Compiler (GHC) via GHCup (https://www.haskell.org/ghcup/)
 ;;;;  - Install the JetBrains Mono Font (https://www.jetbrains.com/lp/mono/)
 ;;;;
 ;;;;  This config should work the first time you open Emacs
@@ -72,14 +77,15 @@
     (setq dired-use-ls-dired nil)))
 
 (use-package monokai-pro-theme) ; custom theme
-(use-package highlight-indent-guides) ; minor mode for showing indent levels - see L110
+(use-package highlight-indent-guides) ; minor mode for showing indent levels - see config under "UI" below
 (use-package all-the-icons-dired) ; adds icon set for dired-sidebar
 (use-package dired-subtree) ; adds intuitive tree-like behavior for dired-sidebar
+(use-package rainbow-delimiters) ; highlight and colorize delimiters based on depth - see config under "UI" below
 (use-package slime) ; Superior Lisp Interaction Mode for Emacs (Common Lisp)
 (use-package neocaml) ; modern OCaml mode, replaces tuareg-mode
+(use-package haskell-mode) ; Haskell language mode
 (use-package git-modes) ; syntax highlight git files such as .gitignore, .gitconfig, etc.
 (use-package markdown-mode) ; interactive mode for working with .md (Markdown) files
-(use-package rainbow-delimiters) ; highlight and colorize delimiters based on depth - see L117
 
 ;;;; UI
 
@@ -115,7 +121,7 @@
 (setq highlight-indent-guides-delay 0) ; update guides instantly - remove default "delay"
 
 ;; Configure rainbow-delimiters, for coloring delimiters based on depth
-(add-hook 'prog-mode-hook 'rainbow-delimiters-mode) ; add to all programming modes
+(add-hook 'lisp-mode-hook 'rainbow-delimiters-mode) ; add to Lisp modes
 
 ;;;; Editor Behavior
 
@@ -136,3 +142,8 @@
 ;; set spellchecker
 (when (string= system-type "darwin") ; use Homebrew on macOS
   (setq ispell-program-name "/opt/homebrew/bin/ispell"))
+
+;; add GHCup bin/ directory to the path, so it can find our Haskell tooling
+(let ((ghcup-path (expand-file-name "~/.ghcup/bin")))
+  (setenv "PATH" (concat ghcup-path ":" (getenv "PATH")))
+  (add-to-list 'exec-path ghcup-path))
