@@ -1,7 +1,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;; .emacs - Jeff Griffin (jeffgriffin0@fastmail.com)
 ;;;;
-;;;; My current setup on macOS (assumes packages are installed via Homebrew)
+;;;; Functional programming setup on macOS.
 ;;;;
 ;;;; Has special plugins to work with:
 ;;;;  - Common Lisp (via SLIME)
@@ -10,12 +10,12 @@
 ;;;;  - Markdown
 ;;;;
 ;;;;  Prereqs:
-;;;;  - $ brew install sbcl # Steel Bank Common Lisp
-;;;;  - $ brew install pandoc # Pandoc (for Markdown/HTML conversion)
-;;;;  - $ brew install ispell # for spell checking
-;;;;  - $ touch ~/.emacs.custom.el
-;;;;  - Install the Glasgow Haskell Compiler (GHC) via GHCup (https://www.haskell.org/ghcup/)
-;;;;  - Install the JetBrains Mono Font (https://www.jetbrains.com/lp/mono/)
+;;;;   - $ brew install sbcl # Steel Bank Common Lisp
+;;;;   - $ brew install pandoc # Pandoc (for Markdown/HTML conversion)
+;;;;   - $ brew install ispell # for spell checking
+;;;;   - $ touch ~/.emacs.custom.el
+;;;;   - Install the Glasgow Haskell Compiler (GHC) via GHCup (https://www.haskell.org/ghcup/)
+;;;;   - Install the JetBrains Mono Font (https://www.jetbrains.com/lp/mono/)
 ;;;;
 ;;;;  This config should work the first time you open Emacs
 ;;;;
