@@ -133,6 +133,6 @@
 (when (string= system-type "darwin") ; use Homebrew on macOS
   (setq markdown-command "/opt/homebrew/bin/pandoc"))
 
-;; set spellechecker
+;; set spellchecker
 (when (string= system-type "darwin") ; use Homebrew on macOS
   (setq ispell-program-name "/opt/homebrew/bin/ispell"))
