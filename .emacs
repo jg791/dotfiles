@@ -29,6 +29,9 @@
 (setq custom-file "~/.emacs.custom.el") ; note: you may need to touch this file if it does not exist
 (load custom-file)
 
+;; turn off irriating lexical binding cookie warning in Emacs 31
+(setq warning-suppress-log-types '((files missing-lexbind-cookie)))
+
 ;;;; Package setup
 (require 'package)
 
