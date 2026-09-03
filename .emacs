@@ -98,6 +98,12 @@
 ;; remove ugly GUI toolbar
 (tool-bar-mode -1)
 
+;; enable smoother scrolling
+(setq pixel-scroll-mode t)
+
+;; shrink the modeline if it's longer than the current window
+(setopt mode-line-compact 'long)
+
 ;; load theme
 (load-theme 'monokai-pro-ristretto)
 
@@ -131,6 +137,9 @@
 ;; automatically update a buffer when the file on disk changes
 (global-auto-revert-mode t)
 (setq auto-revert-use-notify nil)
+
+;; save the last place we were at in the buffer
+(setopt save-place-mode t)
 
 ;;;; Language/Tool Specific Setup
 
