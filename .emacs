@@ -138,7 +138,7 @@
 (global-auto-revert-mode t)
 (setq auto-revert-use-notify nil)
 
-;; save the last place we were at in the buffer
+;; save the last place we were at in the buffer between sessions
 (setopt save-place-mode t)
 
 ;;;; Language/Tool Specific Setup
