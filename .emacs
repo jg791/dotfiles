@@ -141,6 +141,9 @@
 ;; save the last place we were at in the buffer between sessions
 (setopt save-place-mode t)
 
+;; typing while having a selection highlighted replaces the selection
+(setopt delete-selection-mode t)
+
 ;;;; Language/Tool Specific Setup
 
 ;; set SBCL for Common Lisp/SLIME usage
