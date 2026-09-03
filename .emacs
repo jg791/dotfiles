@@ -101,6 +101,13 @@
 ;; enable smoother scrolling
 (setq pixel-scroll-mode t)
 
+;; prevent automatic resizing
+(setopt frame-inhibit-implied-resize t)
+
+;; allow arbitrary window and frame resizing (instead of by character)
+(setopt frame-resize-pixelwise t)
+(setopt window-resize-pixelwise t)
+
 ;; shrink the modeline if it's longer than the current window
 (setopt mode-line-compact 'long)
 
