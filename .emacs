@@ -129,15 +129,15 @@
 ;; start column number from 1 instead of 0, to make it consistent
 (setq column-number-indicator-zero-based nil)
 
+;; Configure rainbow-delimiters, for coloring delimiters based on depth
+(add-hook 'lisp-mode-hook 'rainbow-delimiters-mode) ; add to Lisp modes
+
 ;; Configure highlight-indent-guides minor mode, for showing indentation levels visually
 (add-hook 'prog-mode-hook 'highlight-indent-guides-mode) ; add to all programming modes
 (setq highlight-indent-guides-method 'bitmap) ; use dots, similar to Sublime
 (setq highlight-indent-guides-auto-character-face-perc 100) ; 100% luminosity
-(setq highlight-indent-guides-responsive 'top) ; light up the current highlighted block's indent guide brighter than the rest
+(setq highlight-indent-guides-responsive 'stack) ; light up the current highlighted block's indent guide brighter than the rest
 (setq highlight-indent-guides-delay 0) ; update guides instantly - remove default "delay"
-
-;; Configure rainbow-delimiters, for coloring delimiters based on depth
-(add-hook 'lisp-mode-hook 'rainbow-delimiters-mode) ; add to Lisp modes
 
 ;;;; Editor Behavior
 
